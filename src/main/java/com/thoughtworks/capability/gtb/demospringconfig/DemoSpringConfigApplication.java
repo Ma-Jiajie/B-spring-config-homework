@@ -14,6 +14,12 @@ public class DemoSpringConfigApplication implements ApplicationRunner {
 	@Autowired
 	private MailConfig mailConfig;
 
+	@Autowired
+	private DefaultRecipients defaultRecipients;
+
+	@Autowired
+	private AdditionalHeaders additionalHeaders;
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoSpringConfigApplication.class, args);
 	}
@@ -21,5 +27,7 @@ public class DemoSpringConfigApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println(mailConfig);
+		System.out.println(defaultRecipients);
+		System.out.println(additionalHeaders);
 	}
 }
