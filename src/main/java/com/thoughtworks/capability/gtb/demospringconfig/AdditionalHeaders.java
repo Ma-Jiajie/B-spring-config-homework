@@ -9,24 +9,18 @@ import java.util.Map;
 @Configuration
 @ConfigurationProperties("mail")
 public class AdditionalHeaders {
-    private Map<String, String> additionalHeaders = new HashMap<>();
+    private Map<String, Boolean> additionalHeaders = new HashMap<>();
 
-    public Map<String, String> getAdditionalHeaders() {
+    public Map<String, Boolean> getAdditionalHeaders() {
         return additionalHeaders;
     }
 
-    public void setAdditionalHeaders(Map<String, String> additionalHeaders) {
+    public void setAdditionalHeaders(Map<String, Boolean> additionalHeaders) {
         this.additionalHeaders = additionalHeaders;
     }
 
     @Override
     public String toString() {
-        StringBuilder stringAdditionalHeaders = new StringBuilder("");
-
-        for (String key : additionalHeaders.keySet()) {
-            String value = additionalHeaders.get(key);
-            stringAdditionalHeaders.append(key).append("->").append(value).append("\n");
-        }
-        return stringAdditionalHeaders.toString();
+        return additionalHeaders.toString();
     }
 }
