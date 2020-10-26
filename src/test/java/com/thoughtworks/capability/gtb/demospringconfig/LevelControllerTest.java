@@ -28,7 +28,7 @@ public class LevelControllerTest {
 
     @Test
     public void should_return_basic_when_levelNumber_is_less_1() throws Exception {
-        ReflectionTestUtils.setField(levelController,"levelNumber",-1);
+        ReflectionTestUtils.setField(levelController,"levelNumber",0);
         mockMvc.perform(get("/level"))
                 .andExpect(content().string("basic"));
     }
