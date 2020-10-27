@@ -19,7 +19,7 @@ public class LevelControllerTest3 {
     MockMvc mockMvc;
 
     @Test
-    public void should_return_basic_when_levelNumber_is_less_1() throws Exception {
+    public void should_return_advanced_when_levelNumber_is_greater_1() throws Exception {
         mockMvc.perform(get("/level"))
                 .andExpect(content().string("advanced"));
     }
